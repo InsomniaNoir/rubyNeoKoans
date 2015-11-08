@@ -8,25 +8,25 @@ class AboutArrayAssignment < Neo::Koan
 
   def test_parallel_assignments
     first_name, last_name = ["John", "Smith"]
-    assert_equal ["John"], first_name
-    assert_equal ["Smith"], last_name
+    assert_equal "John", first_name
+    assert_equal "Smith", last_name
   end
 
   def test_parallel_assignments_with_extra_values
     first_name, last_name = ["John", "Smith", "III"]
-    assert_equal ["John"], first_name
-    assert_equal ["Smith"], last_name
+    assert_equal "John", first_name
+    assert_equal "Smith", last_name
   end
 
   def test_parallel_assignments_with_splat_operator
     first_name, *last_name = ["John", "Smith", "III"]
-    assert_equal ["John"], first_name
+    assert_equal "John", first_name
     assert_equal ["Smith", "III"], last_name
   end
 
   def test_parallel_assignments_with_too_few_variables
     first_name, last_name = ["Cher"]
-    assert_equal ["Cher"], first_name
+    assert_equal "Cher", first_name
     assert_equal nil, last_name
   end
 
@@ -45,7 +45,7 @@ class AboutArrayAssignment < Neo::Koan
     first_name = "Roy"
     last_name = "Rob"
     first_name, last_name = last_name, first_name
-    assert_equal "Roy", first_name
-    assert_equal "Rob", last_name
+    assert_equal "Rob", first_name
+    assert_equal "Roy", last_name
   end
 end
